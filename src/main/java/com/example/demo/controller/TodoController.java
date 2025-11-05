@@ -3,10 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.entity.Todo;
 import com.example.demo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,7 +19,7 @@ public class TodoController {
     }
 
     @PostMapping("/todo")
-    public Todo createTodo(Todo todo){
+    public Todo createTodo(@RequestBody Todo todo){
         return todoService.createTodo(todo);
     }
 

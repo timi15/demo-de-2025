@@ -22,7 +22,7 @@ public class TodoService {
         return todoRepository.save(todo);
     }
 
-    public Todo getTodoById(@PathVariable Long todoId){
-        return todoRepository.getById(todoId);
+    public Todo getTodoById(Long todoId){
+        return todoRepository.findById(todoId).get();
     }
 }
